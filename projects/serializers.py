@@ -13,3 +13,8 @@ def validacion(self, value):
         if len(value) < 3:
             raise serializers.ValidationError("El título es muy corto corto.")
         return value
+
+def validacionNeg(self, value):
+     if value < 0:
+          raise serializers.ValidationError(" No puede ser negativo el stock")
+     return value

@@ -19,5 +19,5 @@ class ProjectViewSet(viewsets.ModelViewSet):
         queryset = project.objects.all()
         autor = self.request.query_params.get('author')
         if autor:
-            queryset = queryset.filter(autori = autor)
+            queryset = queryset.filter(autor = autor)
         return queryset
