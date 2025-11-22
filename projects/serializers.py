@@ -7,3 +7,9 @@ class ProjectSerializer(serializers.ModelSerializer):
         model = project
         fields = ('id', 'titulo', 'descripcion')
         read_only_fields =('created_at', )
+
+
+def validacion(self, value):
+        if len(value) < 3:
+            raise serializers.ValidationError("El título es muy corto corto.")
+        return value
